@@ -34,12 +34,12 @@ def process_bar(char: str,
         bar: list[str] = []
     else:
         bar: list[str] = [' '] * bar_length
-        count: int = 0
+        count: int = 0 # 记录bar的当前索引
 
     for progress in range(101):
         print(f'{ prompt }{ progress }%{ arrow }{ side[0] }{ "".join(bar) }{ side[1] }', end='\r')
         sleep(seconds)
-        stdout.flush()
+        stdout.flush() # 刷新缓冲区
 
         if progress % (100 / bar_length) == 0:
             if change_length:
