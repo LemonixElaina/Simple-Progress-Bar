@@ -1,34 +1,39 @@
 # Simple Process Bar
 
 ### 介绍
-一个控制台自动生成进度条的工具
+一个在控制台自动生成进度条的工具
 
  *Version* : 0.11
+
 
 ### 注意事项
 目前各个语言更新并不同步，用法基本一致但并不完全相同，详情见各个语言的源码实现与注释文档，以下文档以Javascript版本为例
 
+
 ### 文档
 
-- :param char: 进度条填充字符
+Arguments
 
-- info
+- *String* 				 char: 进度条填充字符
 
-> :param barLength: 进度条长度
+- *Object* 				 info
 
-> :param prompt: 提示符
+> *Number* 				 barLength: 进度条长度
 
-> :param arrow: 箭头
+> *String* 				 prompt: 提示符
 
-> :param milliseconds: 进度变化的间隔
+> *String* 				 arrow: 箭头
 
-> :param side: 进度条两边的包裹字符
+> *Number* 				 milliseconds: 进度变化的间隔
 
-> :param isChangeLength: 进度条是否变化长度
+> *Array &lt;String&gt;* side: 进度条两边的包裹字符
 
-> :param isDisplayTime 进度条后是否显示用时
+> *Boolean* 			 isChangeLength: 进度条是否变化长度
 
-- :return: 是否运行完成
+> *Boolean* 			 isDisplayTime 进度条后是否显示用时
+
+- *Boolean* 			 :return -> 是否运行完成
+
 ```
                 side[0]  side[1]
                    |        |
@@ -39,6 +44,12 @@
 
 
 ### 贡献名单
-Javascript版本  **Lemonix**
+*Javascript* 版本:  **Lemonix**
 
-Python版本  **Lemonix** 
+*Python* 版本:  **Lemonix** 
+
+*C#* 版本: **Sherklock** (Coming soon)
+
+*C* 版本: 待定
+
+*Java* 版本: 待定
