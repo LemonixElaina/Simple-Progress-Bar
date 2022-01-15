@@ -9,7 +9,7 @@ def process_bar(char: str,
                 arrow: str = ' : ',
                 seconds: float = 0.1,
                 side: tuple[str] = ('[', ']'),
-                change_length: bool = True) -> None:
+                change_length: bool = True) -> bool:
     """
     :param char: 进度条填充字符
     :param bar_length: 进度条长度
@@ -48,5 +48,5 @@ def process_bar(char: str,
                 bar[count] = char
                 count += 1
 
-    print()
+    return {'done': True};
 

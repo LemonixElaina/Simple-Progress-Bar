@@ -68,6 +68,9 @@ function processBar(char, info = {}) {
 			clearInterval(id); // 停止循环
 		}
 	}, milliseconds );
+
+	
+	return { done: true };
 }
 
 module.exports = { processBar }; // 导出
