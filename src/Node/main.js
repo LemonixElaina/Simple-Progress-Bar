@@ -4,17 +4,18 @@ function display(isDisplayTime, justNow) {
 		let seconds = Math.floor((now - justNow) / 1000);
 		let minutes = Math.floor(seconds / 60);
 		let hours = Math.floor(minutes / 60);
-		
-		if (seconds.toString().length == 1) {
-			seconds = '0' + seconds;
-		} if (minutes.toString().length == 1) {
-			minutes = '0' + minutes;
-		} if (hours.toString().length == 1) {
-			hours = '0' + hours;
+
+		const temp = [seconds, minutes, hours];
+		for (let [index, item] of temp.entries()) {
+			if (item.toString().length == 1) {
+				temp[index] = '0' + item;
+			}
 		}
 
+		[seconds, minutes, hours] = temp;
+
 		// 正常碳基生物可读形式(韩国人不算)
-		return `${hours}:${minutes}:${seconds}`;
+		return `${ hours }:${ minutes }:${ seconds }`;
 	} else {
 		// ''拼接后不显示
 		return '';
@@ -64,6 +65,7 @@ function progressBar(char, info = {}) {
 					progress++;
 				}
 			}
+
 			count++;
 		} else {
 			clearInterval(id); // 停止循环

@@ -12,26 +12,27 @@ def __display(is_display_time: bool, just_now: float) -> str:
 		minutes: int = seconds // 60
 		hours: int = seconds // 60
 
-		if len(str(seconds)) == 1:
-			seconds: str = f'0{seconds}'
-		if len(str(minutes)) == 1:
-			minutes: str = f'0{minutes}'
-		if len(str(hours)) == 1:
-			hours: str = f'0{hours}'
+		temp: list[int] = [seconds, minutes, hours]
+		for index, item in enumerate(temp):
+			if len(str(item)) == 1:
+				temp[index] = f'0{ item }'
+		
+		seconds, minutes, hours = temp
 
-		return f'{hours}:{minutes}:{seconds}'
+		return f'{ hours }:{ minutes }:{ seconds }'
+
 	else:
 		return ''
 
+
 def progress_bar(char: str,
-                bar_length: int = 50,
-                *,
+                bar_length: int = 50, *, # 强制关键词
                 prompt: str = 'Downloading: ',
                 arrow: str = ' : ',
                 seconds: float = 0.1,
                 side: tuple[str] = ('[', '] '),
                 is_change_length: bool = True,
-				is_display_time: bool = True) -> bool:
+				is_display_time: bool = True) -> dict:
     """
     :param char: 进度条填充字符
     :param bar_length: 进度条长度
@@ -69,9 +70,9 @@ def progress_bar(char: str,
         if progress % (100 / bar_length) == 0 and progress != 100:
             if is_change_length:
                 bar.append(char)
+			
             else:
                 bar[count] = char
                 count += 1
 
     return {'done': True};
-
