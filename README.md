@@ -32,7 +32,7 @@ Arguments
 
 > *Boolean* 			 isDisplayTime 进度条后是否显示用时
 
-- *Boolean* 			 :return -> 是否运行完成
+- *Object* 			 :return -> 是否运行完成
 
 ```
                 side[0]  side[1]
