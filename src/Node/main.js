@@ -13,7 +13,7 @@ function display(isDisplayTime, justNow) {
 			hours = '0' + hours;
 		}
 
-		// 正常碳基生物可读形势(韩国人不算)
+		// 正常碳基生物可读形式(韩国人不算)
 		return `${hours}:${minutes}:${seconds}`;
 	} else {
 		// ''拼接后不显示
@@ -22,7 +22,7 @@ function display(isDisplayTime, justNow) {
 }
 
 
-function processBar(char, info = {}) {
+function progressBar(char, info = {}) {
 	const {
 		barLength = 50,
 		prompt = 'Downloading ',
@@ -36,6 +36,7 @@ function processBar(char, info = {}) {
 	if (![1, 5, 10, 20, 25, 50, 100].includes(barLength)) {
 		throw new Error('Invalid bar length');
 	}
+
 	const justNow = isDisplayTime ? Date.now() : undefined;
 	let count = 0;
 	let bar, progress;
@@ -73,4 +74,4 @@ function processBar(char, info = {}) {
 	return { done: true };
 }
 
-module.exports = { processBar }; // 导出
+module.exports = { progressBar }; // 导出

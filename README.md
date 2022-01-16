@@ -1,4 +1,4 @@
-# Simple Process Bar
+# Simple Progress Bar
 
 ### 介绍
 一个在控制台自动生成进度条的工具

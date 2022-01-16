@@ -1,3 +1,3 @@
-from main import process_bar
+from main import progress_bar
 
-process_bar('#')
+progress_bar('#', is_change_length=False)
